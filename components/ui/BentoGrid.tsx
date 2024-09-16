@@ -67,17 +67,8 @@ export const BentoGridItem = ({
   };
 
   const handleCopy = () => {
-    const fileUrl = '/Khush patel.pdf';
-    
-    // Create a link element and trigger the download
-    const link = document.createElement('a');
-    link.href = fileUrl;
-    link.download = 'khush patel.pdf'; // Specify the file name
-    document.body.appendChild(link);
-    link.click();
-    
-    // Cleanup
-    document.body.removeChild(link);
+    const text = "patelkhush560@gmail.com";
+    navigator.clipboard.writeText(text);
     setCopied(true);
   };
 
@@ -193,7 +184,7 @@ export const BentoGridItem = ({
               </div>
 
               <MagicButton
-                title={copied ? "CV Downloaded!" : "Download my CV"}
+                title={copied ? "Email is Copied!" : "Copy my email address"}
                 icon={<IoCopyOutline />}
                 position="left"
                 handleClick={handleCopy}
